@@ -1,17 +1,35 @@
 # Dockerized Email Generator - Deep Email
-The current project helps users generate emails with subject line based on prompts. The chainlit package is used to build a chat UI using which users can communicate with the LLM to get their desired email generated.
-Below are the steps to follow to run the Deep Email project
 
-## 1. Dependencies
-  - Docker
-    
-## 2. Clone the repository
+The Deep Email project helps users generate emails with subject lines based on prompts. The Chainlit package is used to build a chat UI through which users can communicate with the LLM to get their desired email generated.
 
-## 3. Create Docker Image
-` docker build -t img_deepemail:latest . `
+### Usage Instructions:
 
-## 4. Create and Run Docker Continer
-` docker run --name con_deepemail -p 8000:8000 -v C:\Users\hp\Documents\GitHub\DockerizedEmailGenerator:\app img_deepemail:latest `
+1. **Dependencies:**
+   - Docker
 
-## 5. Follow http://localhost:8005/ to access the chainlit chat UI
+2. **Clone the repository:**
+   ```bash
+   git clone https://github.com/AbbiJay/deepemail.git
+   cd DeepEmail
+   ```
 
+3. **Create Docker Image:**
+   ```bash
+   docker build -t img_deepemail:latest .
+   ```
+
+4. **Create and Run Docker Container:**
+   ```bash
+   docker run --name con_deepemail -p 8000:8000 -v /path/to/DeepEmail:/app img_deepemail:latest
+   ```
+
+5. **Access the Chainlit Chat UI:**
+   - Visit [http://localhost:8005/](http://localhost:8005/) to access the Chainlit chat UI.
+
+### Fine-Tuning Instructions:
+
+- To fine-tune Falcon 7B on your own dataset, use the `EmailFineTuned_Falcon_7B.ipynb` notebook available in this repository. You can download the fine-tuned model from [Hugging Face](https://huggingface.co/AJ02/Updated-FineTuned-Falcon-7b).
+
+---
+
+Make sure to replace `/path/to/DeepEmail` with the actual path on your Docker host where the repository is located. 
